@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <xx @welcome="second($event)"> </xx>
+            <!-- <button @click="Do(4,$event)">click</button> -->
+        </div>
+        <script>
+            Vue.component('xx', {
+                template: `
+                        <button v-on:click="$emit('welcome','outout')">
+                        Click me to be welcomed
+                        </button>
+                    `,
+            })
+            new Vue({
+                el: '#app',
+                methods: {
+                    Do(a) {
+                        console.log(a)
+                    },
+                    second(x, $event) {
+                        console.log(x, $event)
+                    },
+                },
+            })
+        </script>
+    </body>
+</html>

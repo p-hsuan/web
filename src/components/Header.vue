@@ -23,10 +23,13 @@ export default {
     height: 100%;
     .layout-navbar {
         position: fixed;
-
+        // height: 100%;
         width: 100%;
         z-index: 1;
-
+        @include rwd(small) {
+            // position: static;
+            // height: 100%;
+        }
         // background-color: rgb(124, 21, 21);
     }
     .layout-slider {

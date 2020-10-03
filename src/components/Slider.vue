@@ -14,6 +14,10 @@
                 <!-- <div class="swiper-slide">
                     <img src="@/assets/img/banner/3.jpg" alt="" />
         </div>-->
+                <div class="title">
+                    <h1>辰俔</h1>
+                    <p>打造裝潢典雅的空間設計美學</p>
+                </div>
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
@@ -37,7 +41,7 @@ export default {
             // spaceBetween: 30,
             effect: 'fade',
             autoplay: {
-                delay: 2000,
+                delay: 3000,
             },
             pagination: {
                 el: '.swiper-pagination',
@@ -62,14 +66,37 @@ export default {
         .swiper-wrapper {
             // height: 100%;
             // display: flex;
+            position: relative;
             .swiper-slide {
                 // height: 100%;
                 // background: rgba(201, 163, 163, 0.911);
                 background-color: rgba(0, 0, 0, 0.945);
+
+                // position: relative;
+
                 img {
                     display: block;
                     width: 100%;
                     opacity: 0.7;
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+
+            .title {
+                position: absolute;
+                color: white;
+                left: 50%;
+                // z-index: 1;
+                bottom: 10%;
+                transform: translateX(-50%);
+                text-align: center;
+                h1 {
+                    font-size: 5rem;
+                    margin-bottom: 10px;
+                }
+                p {
+                    font-size: 3rem;
                 }
             }
         }
