@@ -237,9 +237,12 @@ export default {
     margin-top: 30px;
 
     background-color: rgb(240, 239, 239);
-    border-radius: 10px;
+    border-radius: 5px;
 
     padding: 20px 20px;
+    @include rwd(small) {
+        width: 85%;
+    }
     .board-row {
         border: 1px solid #c0a392;
 

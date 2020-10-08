@@ -41,7 +41,9 @@ export default {
             margin: 0 auto;
             line-height: 1.2;
             letter-spacing: 1px;
-
+            @include rwd(small) {
+                width: 80%;
+            }
             @include rwd(mobile) {
                 width: 80%;
             }

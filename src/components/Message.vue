@@ -11,24 +11,14 @@
                     <div class="information">
                         <div class="field name">
                             <label class="inputText" for="name">姓名 : </label>
-                            <input
-                                v-model="personalData.name"
-                                type="text"
-                                id="name"
-                                placeholder="你的姓名"
-                            />
+                            <input v-model="personalData.name" type="text" id="name" placeholder="你的姓名" />
                         </div>
                         <p v-show="feedback.name.condition">
                             {{ feedback.name.text }}
                         </p>
                         <div class="field">
                             <label class="inputText" for="mobile">手機 :</label>
-                            <input
-                                v-model="personalData.mobile"
-                                type="text"
-                                id="mobile"
-                                placeholder="你的電話"
-                            />
+                            <input v-model="personalData.mobile" type="text" id="mobile" placeholder="你的電話" />
                         </div>
                         <p v-show="feedback.mobile.condition">
                             {{ feedback.mobile.text }}
@@ -36,12 +26,7 @@
 
                         <div class="field">
                             <label class="inputText" for="email">e-mail :</label>
-                            <input
-                                v-model="personalData.email"
-                                type="text"
-                                id="email"
-                                placeholder="你的電子郵件"
-                            />
+                            <input v-model="personalData.email" type="text" id="email" placeholder="你的電子郵件" />
                         </div>
                         <p v-show="feedback.email.condition">
                             {{ feedback.email.text }}
@@ -51,9 +36,7 @@
                         <div class="field">
                             <label class="inputText" for="region">地區:</label>
                             <select id="region" v-model="personalData.region">
-                                <option v-for="(item, index) in region" :key="index">{{
-                                    item
-                                }}</option>
+                                <option v-for="(item, index) in region" :key="index">{{ item }}</option>
                             </select>
                             <!-- <select>
                                 <option value=""></option>
@@ -68,38 +51,48 @@
                             <div class="radioTitle">
                                 預算:
                             </div>
-                            <input
-                                v-model="personalData.budget"
-                                type="radio"
-                                id="50wbudget"
-                                name="budget"
-                                value="50"
-                            />
-                            <label class="labelRadio" for="50wbudget">50萬</label>
-                            <input
-                                v-model="personalData.budget"
-                                type="radio"
-                                id="100wbudget"
-                                name="budget"
-                                value="100"
-                            />
-                            <label class="labelRadio" for="100wbudget">100萬</label>
-                            <input
-                                v-model="personalData.budget"
-                                type="radio"
-                                id="150wbudget"
-                                name="budget"
-                                value="150"
-                            />
-                            <label class="labelRadio" for="150wbudget">150萬</label>
-                            <input
-                                v-model="personalData.budget"
-                                type="radio"
-                                id="200wbudget"
-                                name="budget"
-                                value="200"
-                            />
-                            <label class="labelRadio" for="200wbudget">200萬</label>
+                            <div class="radio">
+                                <div class="radio-item">
+                                    <input
+                                        v-model="personalData.budget"
+                                        type="radio"
+                                        id="50wbudget"
+                                        name="budget"
+                                        value="50"
+                                    />
+                                    <label class="labelRadio" for="50wbudget">50萬</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input
+                                        v-model="personalData.budget"
+                                        type="radio"
+                                        id="100wbudget"
+                                        name="budget"
+                                        value="100"
+                                    />
+                                    <label class="labelRadio" for="100wbudget">100萬</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input
+                                        v-model="personalData.budget"
+                                        type="radio"
+                                        id="150wbudget"
+                                        name="budget"
+                                        value="150"
+                                    />
+                                    <label class="labelRadio" for="150wbudget">150萬</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input
+                                        v-model="personalData.budget"
+                                        type="radio"
+                                        id="200wbudget"
+                                        name="budget"
+                                        value="200"
+                                    />
+                                    <label class="labelRadio" for="200wbudget">200萬</label>
+                                </div>
+                            </div>
                         </div>
                         <p v-show="feedback.budget.condition">
                             {{ feedback.budget.text }}
@@ -108,7 +101,7 @@
                         <!-- textarea -->
                         <div class="feild-textarea">
                             <div class="contentTitle">需求內容 :</div>
-                            <textarea v-model="personalData.content" class="content"></textarea>
+                            <textarea v-model="personalData.content" class="content"> </textarea>
                             <p v-show="feedback.content.condition">
                                 {{ feedback.content.text }}
                             </p>
@@ -185,7 +178,12 @@ export default {
                                 index: this.maxMessage + 1,
                             })
                             .then(() => {
-                                window.location.reload()
+                                // window.location.reload()
+                                // window.location.href =
+                                //     'http://140.115.236.71/demo-personal/DD106/works/T1901813/1/messageboard'
+                                // windows
+                                window.location.href = 'http://140.115.236.71/demo-personal/DD106/works/T1901813/1/'
+                                // this.$router.push({ name: 'Messageboard' })
                             })
                     })
             }
@@ -193,7 +191,6 @@ export default {
 
         // close emit to messageboard
         close() {
-            console.log(1255)
             this.$emit('close')
         },
     },
@@ -211,28 +208,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.background {
-    height: 350px;
-    background-image: url('../assets/img/message/message.jpg');
-    background-position: center;
-    background-size: cover;
-    opacity: 0.88;
-
-    position: relative;
-    // for h4
-
-    h4 {
-        position: absolute;
-        left: 50%;
-        top: 65%;
-        transform: translate(-50%, -50%);
-
-        opacity: 1;
-        color: white;
-        font-size: 3rem;
-    }
-}
-
 .message-inner {
     max-width: 1160px;
     margin: 0 auto;
@@ -241,11 +216,16 @@ export default {
     // for center messageboard to center of message-inner
     display: flex;
 
+    @include rwd(small) {
+        // max-width: none;
+        // width: 0%;
+        // margin: 0 auto;
+    }
     .messageboard {
         border: 1px solid #c0a392;
         background-color: rgb(243, 243, 243);
 
-        // for center messageboard to center of message-inner
+        // for center messagebo ard to center of message-inner
         margin: 0 auto;
 
         // for close svg
@@ -258,6 +238,10 @@ export default {
         // The space to page background and footer
         margin-top: 30px;
         margin-bottom: 30px;
+
+        @include rwd(small) {
+            width: 80%;
+        }
         .close {
             position: absolute;
 
@@ -287,13 +271,22 @@ export default {
             flex-direction: column;
             justify-content: center;
 
+            // border: 1px solid green;
+
             .information {
                 // width: 80%;
                 min-width: 360px;
                 margin: 0 auto;
-                // border: 1px solid red;
+                // border: 1px solid rgb(138, 31, 160);
 
                 // padding-left: 20%;
+
+                @include rwd(small) {
+                    min-width: 0;
+                    // width: 80%;
+                    // width: 100%;
+                    // margin: 0;
+                }
                 p {
                     margin-left: 19%;
 
@@ -302,6 +295,10 @@ export default {
                     font-size: 1rem;
 
                     margin-bottom: 5px;
+
+                    @include rwd(small) {
+                        margin-left: 0;
+                    }
                 }
                 .field {
                     display: flex;
@@ -309,6 +306,13 @@ export default {
                     margin-top: 8px;
 
                     font-size: 2rem;
+
+                    @include rwd(small) {
+                        flex-direction: column;
+
+                        // make align to left
+                        align-items: flex-start;
+                    }
 
                     // ---------Text input ----------//
 
@@ -319,6 +323,13 @@ export default {
                         font-size: 2.2rem;
 
                         transition: border 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+                        @include rwd(small) {
+                            width: 80%;
+                            padding: 3px;
+
+                            font-size: 1.6rem;
+                        }
                     }
 
                     // make placeholder text be disappeared when user click input
@@ -340,6 +351,11 @@ export default {
                         // margin-right: 10px;
 
                         flex: 0 1 19%;
+
+                        @include rwd(small) {
+                            margin-bottom: 5px;
+                            font-size: 1.8rem;
+                        }
                     }
 
                     // --------------------- //
@@ -371,6 +387,8 @@ export default {
                     display: flex;
                     flex-direction: column;
 
+                    // border: 1px solid blue;
+
                     font-size: 2rem;
 
                     // space between to btn
@@ -391,6 +409,12 @@ export default {
                         padding: 5px;
 
                         font-size: 2rem;
+
+                        box-sizing: border-box;
+
+                        display: block;
+
+                        width: 100%;
                     }
 
                     textarea:focus {
