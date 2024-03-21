@@ -21,6 +21,6 @@ module.exports = {
             },
         ],
         'global-require': 0,
-        'max-len': ['error', { code: 120 }],
+        'max-len': ['error', { code: 360 }],
     },
 }

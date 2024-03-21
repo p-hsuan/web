@@ -41,10 +41,10 @@ const routes = [
 ]
 
 const router = new VueRouter({
-    mode: 'history',
+    // mode: 'hash',
     linkExactActiveClass: 'a',
-    base: process.env.BASE_URL,
-    // base: '/demo-personal/DD106/works/T1901813/1/',
+    // base: process.env.BASE_URL,
+    base: '/demo-personal/DD106/works/T1901813/1/',
     routes,
 })
 

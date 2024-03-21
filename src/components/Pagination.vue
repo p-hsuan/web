@@ -4,13 +4,8 @@
             <li v-if="first" @click="btnFirst">{{ symbolFirst }}</li>
             <li v-if="pre" @click="btnPre">{{ symbolprevious }}</li>
             <li v-if="pre">|</li>
-            <li
-                v-for="(item, index) in arrayPagination"
-                :key="index"
-                @click="toPage"
-                class="number"
-                :class="{ active: currentPage === item }"
-            >
+            <li v-for="(item, index) in arrayPagination" :key="index" @click="toPage" class="number"
+                :class="{ active: currentPage === item }">
                 {{ item }}
             </li>
             <li v-if="next">|</li>
@@ -129,7 +124,7 @@ export default {
         },
     },
 
-    create() {},
+    create() { },
 
     watch: {
         // detect currentPage

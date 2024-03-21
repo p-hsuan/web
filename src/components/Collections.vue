@@ -5,7 +5,7 @@
             <div class="product">
                 <img :src="item.src" alt />
                 <p>{{ item.title }}</p>
-                <div>
+        <div>
                     <!-- <span>{{ item.amount }} 筆作品</span> -->
 
                     <svg class="eye">

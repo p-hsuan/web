@@ -178,11 +178,11 @@ export default {
                                 index: this.maxMessage + 1,
                             })
                             .then(() => {
-                                // window.location.reload()
+                                window.location.reload()
                                 // window.location.href =
                                 //     'http://140.115.236.71/demo-personal/DD106/works/T1901813/1/messageboard'
                                 // windows
-                                window.location.href = 'http://140.115.236.71/demo-personal/DD106/works/T1901813/1/'
+                                // window.location.href = 'http://140.115.236.71/demo-personal/DD106/works/T1901813/1/'
                                 // this.$router.push({ name: 'Messageboard' })
                             })
                     })
